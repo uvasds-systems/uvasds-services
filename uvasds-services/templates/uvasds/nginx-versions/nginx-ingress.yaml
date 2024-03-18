@@ -8,7 +8,7 @@ metadata:
   namespace: uvasds-services
 spec:
   rules:
-  - host: nginx-sds-versions.pods.uvarc.io
+  - host: nginx-uvasds.pods.uvarc.io
     http:
       paths:
       - pathType: Prefix
