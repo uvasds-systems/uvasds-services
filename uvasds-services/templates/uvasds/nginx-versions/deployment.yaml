@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-sds-versions-deployment
+  namespace: uvasds-services
+  labels:
+    app: nginx-sds-versions
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-sds-versions
+  template:
+    metadata:
+      labels:
+        app: nginx-sds-versions
+    spec:
+      containers:
+      - name: nginx-sds-versions-container
+        image: ghcr.io/cs4740/nginx-versions:{{ .Values.version.nginxVersions }}
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "524Mi"
+            cpu: "500m"
+          limits:
+            memory: "1024Mi"
+            cpu: "1000m"

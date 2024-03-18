@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: nginx-sds-versions-nginx-ingress
+  namespace: uvasds-services
+spec:
+  rules:
+  - host: nginx-sds-versions.pods.uvarc.io
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: nginx-sds-versions-service
+            port:
+              number: 8080

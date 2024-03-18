@@ -1,0 +1,22 @@
+name: Remote Dispatch Action
+
+on: [ repository_dispatch, workflow_dispatch ]
+
+jobs:
+  update-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Event Information
+        run: |
+          echo "Event '${{ github.event.action }}' received. Increase ${{ github.event.client_payload.service }} service to version ${{ github.event.client_payload.version }}."
+      - name: Update Image Version in the related HelmChart values.yaml
+        uses: fjogeleit/yaml-update-action@main
+        with:
+          valueFile: 'uvasds-services/values.yaml'
+          propertyPath: '.version.${{ github.event.client_payload.service }}'
+          value: ${{ github.event.client_payload.version }}
+          branch: main
+          targetBranch: main
+          createPR: false
+          message: 'Update ${{ github.event.client_payload.service }} to ${{ github.event.client_payload.version }}' 
