@@ -1,0 +1,25 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: ping-demo
+  namespace: uvasds-services
+spec:
+  schedule: "0 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: ping-container
+            image: busybox
+            imagePullPolicy: IfNotPresent
+            command: ["/bin/ping", "-c 5", "www.google.com"]
+            resources:  
+              limits:   
+                cpu: "0.5"
+                memory: 512Mi
+              requests: 
+                cpu: "0.5"
+                memory: 512Mi
+          restartPolicy: OnFailure
+      ttlSecondsAfterFinished: 86400

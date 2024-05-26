@@ -1,0 +1,38 @@
+# apiVersion: batch/v1
+# kind: CronJob
+# metadata:
+#   name: rivanna-refresh
+#   namespace: uvasds-services
+# spec:
+#   schedule: "0 */4 * * *"
+#   jobTemplate:
+#     spec:
+#       template:
+#         spec:
+#           containers:
+#           - name: rivanna-refresh-container
+#             image: ghcr.io/uvarc/ssh:latest
+#             imagePullPolicy: Always
+#             command: ["/bin/bash", "/pull-newkey.sh"]
+#             volumeMounts:
+#             - name: ssh-key-volume
+#               mountPath: "/etc/ssh-key"
+#             env:
+#             - name: REMOTE_SCRIPT
+#               value: "/sfs/qumulo/qproject/rivanna_software/refresh.sh"
+#             - name: USERID
+#               value: "nem2p"
+#             resources:  
+#               limits:   
+#                 cpu: "0.5"
+#                 memory: 512Mi
+#               requests: 
+#                 cpu: "0.5"
+#                 memory: 512Mi
+#           volumes:
+#           - name: ssh-key-volume
+#             secret:
+#               secretName: nem2p-ssh-key
+#               defaultMode: 256
+#           restartPolicy: OnFailure
+#       ttlSecondsAfterFinished: 86400
