@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: ping-demo
+  name: perl
   namespace: uvasds-services
 spec:
   schedule: "0 * * * *"
@@ -10,10 +10,9 @@ spec:
       template:
         spec:
           containers:
-          - name: ping-container
-            image: busybox
-            imagePullPolicy: IfNotPresent
-            command: ["/bin/ping -c 5 www.google.com"]
+          - name: pi
+            image: perl:5.34.0
+            command: ["perl",  "-Mbignum=bpi", "-wle", "print bpi(2000)"]
             resources:  
               limits:   
                 cpu: "0.5"
@@ -21,5 +20,5 @@ spec:
               requests: 
                 cpu: "0.5"
                 memory: 512Mi
-          restartPolicy: OnFailure
+          restartPolicy: Never
       ttlSecondsAfterFinished: 86400
