@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: zzzzz-container
-        image: ghcr.io/nmagee/zzzzz:latest
+        image: ghcr.io/nmagee/fastapi-demo:latest
         ports:
         - containerPort: 80
         resources:
