@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: fastapi-demo-container
-        image: ghcr.io/nmagee/fastapi-demo:{{ .Values.version.fastapi-demo }}
+        image: ghcr.io/nmagee/fastapi-demo:{{ .Values.version.fastapiDemo }}
         ports:
         - containerPort: 80
         resources:
