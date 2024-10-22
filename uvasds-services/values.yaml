@@ -1,3 +1,4 @@
 version:
   nginxVersions: '1.85'
   fastapiDemo: '1.89'
+  nem2p: '1.85'
