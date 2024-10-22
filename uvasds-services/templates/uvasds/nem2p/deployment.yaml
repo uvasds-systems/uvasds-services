@@ -38,7 +38,7 @@ metadata:
   namespace: uvasds-services
 spec:
   rules:
-  - host: zzzzz.pods.uvarc.io
+  - host: zzzzz-api.pods.uvarc.io
     http:
       paths:
       - pathType: Prefix
