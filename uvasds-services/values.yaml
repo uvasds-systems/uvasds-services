@@ -1,2 +1,3 @@
 version:
   nginxVersions: '1.85'
+  fastapi-demo: '1.89'
