@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: id-generator-deployment
+  namespace: uvasds-services
+  labels:
+    app: id-generator
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: id-generator
+  template:
+    metadata:
+      labels:
+        app: id-generator
+        environment: production
+        owner: nem2p
+        team: uvasds
+    spec:
+      containers:
+      - name: id-generator-container
+        image: ghcr.io/uvarc/id-generator:{{ .Values.version.idGenerator }}
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "2048Mi"
+            cpu: "2000m"
+          limits:
+            memory: "4096Mi"
+            cpu: "4000m"
