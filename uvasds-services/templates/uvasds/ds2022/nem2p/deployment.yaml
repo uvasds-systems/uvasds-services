@@ -26,8 +26,6 @@ spec:
             secretKeyRef:
               name: dp1pass
               key: DBPASS
-        - name: DBPASS2
-          value: "D$2022pAss"
         resources:
           requests:
             memory: "1024Mi"
