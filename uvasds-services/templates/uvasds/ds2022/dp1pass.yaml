@@ -1,0 +1,15 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: dp1pass
+  namespace: uvasds-services
+spec:
+  encryptedData:
+    DBPASS: AgC/bX3VIofBTdZYzsoN0JdxfiK1/tShTiAd1uDl3E/Y1+Ho9gml/NZJhK3qG9RVPIIunwp5RpXirvFa/thLawfB2/vJ0SF7c7Ks7WSm59Al8WfCveOOp706D3mh0rFPZ5J2RS0yRGizb6s1vHxk7vv4WAK68uEQ/IVZuv5uV8rkr3KEfxXUSw3JrpOGdWoiY8RkC21DdwoeIlS/3dNOq3BKXIplPpWrBPTrEQZ4ugWR/KkXBefehaAfED9uJCzzTh/cFtn71tKmcwobwJkDFB5hN0ThpwV7nqcZsk8j99dlEbNR3euvRIlohji83JBrScJewnmtHhEAThh3zGAzCJzViySrW2X0FZnYZcjhNTj8zjVwjdlN/2/wsa8J8QmkQnSzEYhyXyIjgHsm7YZSPykLAy+6XNu608A8KlvXYKG65duAwHzgcynaWCKZwXXtpdwI9tqLHg2tR14HGjoF9aPuZqvsncdNehm6zz5zQqMLw++U7hgp3eu6RxQB0V4JRbcxrEKAe5VIZGj0aKJgUQTg0GUZMqGIJUVeUfqf5Fc1JgWbsZzsrlhmXu7C2XhK75BDObISCy3SdCp50Crrcl8BrEKiOPa03vdU5d297p7Ka1pUmwFy5r+FY1KM/eRcD5P8rJFG4PdmgNUGKp6TMukw9r2Aezst4FZYkar7kjkTGXqh7SH2sSmTbmGZg8KKyXiYh169hRovQiPW
+  template:
+    metadata:
+      creationTimestamp: null
+      name: dp1pass
+      namespace: uvasds-services
