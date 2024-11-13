@@ -20,6 +20,9 @@ spec:
         image: ghcr.io/nmagee/fastapi-demo:1.95
         ports:
         - containerPort: 80
+        envFrom:
+        - secretRef: 
+            name: dp1-password
         resources:
           requests:
             memory: "524Mi"
