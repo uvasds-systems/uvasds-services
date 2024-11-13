@@ -22,7 +22,7 @@ spec:
         - containerPort: 80
         env:
         - name: DBPASS
-          value: "D\$2022pAss"
+          value: "D$2022pAss"
         resources:
           requests:
             memory: "524Mi"
