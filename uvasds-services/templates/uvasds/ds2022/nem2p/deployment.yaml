@@ -17,15 +17,17 @@ spec:
     spec:
       containers:
       - name: nem2p-dp1-container
-        image: ghcr.io/nmagee/fastapi-demo:1.97
+        image: ghcr.io/nmagee/fastapi-demo:1.99
         ports:
         - containerPort: 80
         env:
         - name: DBPASS
-          valueFrom:
-            secretKeyRef:
-              name: dp1pass
-              key: DBPASS
+          value: sds_class27
+#        - name: DBPASS
+#          valueFrom:
+#            secretKeyRef:
+#              name: dp1pass
+#              key: DBPASS
         resources:
           requests:
             memory: "1024Mi"
