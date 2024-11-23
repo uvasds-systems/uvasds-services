@@ -1,24 +1,24 @@
-apiVersion: batch/v1
-kind: CronJob
-metadata:
-  name: pi-calculation
-  namespace: uvasds-services
-spec:
-  schedule: "0 * * * *"
-  jobTemplate:
-    spec:
-      template:
-        spec:
-          containers:
-          - name: pi-calc
-            image: perl:5.34.0
-            command: ["perl",  "-Mbignum=bpi", "-wle", "print bpi(2000)"]
-            resources:  
-              limits:   
-                cpu: "0.5"
-                memory: 512Mi
-              requests: 
-                cpu: "0.5"
-                memory: 512Mi
-          restartPolicy: Never
-      ttlSecondsAfterFinished: 86400
+# apiVersion: batch/v1
+# kind: CronJob
+# metadata:
+#   name: pi-calculation
+#   namespace: uvasds-services
+# spec:
+#   schedule: "0 * * * *"
+#   jobTemplate:
+#     spec:
+#       template:
+#         spec:
+#           containers:
+#           - name: pi-calc
+#             image: perl:5.34.0
+#             command: ["perl",  "-Mbignum=bpi", "-wle", "print bpi(2000)"]
+#             resources:  
+#               limits:   
+#                 cpu: "0.5"
+#                 memory: 512Mi
+#               requests: 
+#                 cpu: "0.5"
+#                 memory: 512Mi
+#           restartPolicy: Never
+#       ttlSecondsAfterFinished: 86400
