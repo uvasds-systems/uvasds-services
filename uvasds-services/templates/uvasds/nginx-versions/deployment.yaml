@@ -6,7 +6,7 @@ metadata:
   labels:
     app: nginx-sds-versions
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: nginx-sds-versions

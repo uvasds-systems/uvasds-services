@@ -1,25 +1,25 @@
-apiVersion: batch/v1
-kind: Job
-metadata:
-  name: host-echo
-  namespace: uvasds-services
-spec:
-  parallelism: 4
-  template:
-    spec:
-      containers:
-      - name: host-echo
-        image: busybox
-        command: ["/bin/hostname"]
-        resources:  
-          limits:   
-            cpu: "0.5"
-            memory: 512Mi
-          requests: 
-            cpu: "0.5"
-            memory: 512Mi
-      restartPolicy: Never
-      nodeSelector:
-        node: uvasds
-  ttlSecondsAfterFinished: 86400
-  backoffLimit: 4
+# apiVersion: batch/v1
+# kind: Job
+# metadata:
+#   name: host-echo
+#   namespace: uvasds-services
+# spec:
+#   parallelism: 4
+#   template:
+#     spec:
+#       containers:
+#       - name: host-echo
+#         image: busybox
+#         command: ["/bin/hostname"]
+#         resources:  
+#           limits:   
+#             cpu: "0.5"
+#             memory: 512Mi
+#           requests: 
+#             cpu: "0.5"
+#             memory: 512Mi
+#       restartPolicy: Never
+#       nodeSelector:
+#         node: uvasds
+#   ttlSecondsAfterFinished: 86400
+#   backoffLimit: 4

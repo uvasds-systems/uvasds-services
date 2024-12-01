@@ -1,29 +1,29 @@
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: fastapi-demo-deployment
-  namespace: uvasds-services
-  labels:
-    app: fastapi-demo
-spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: fastapi-demo
-  template:
-    metadata:
-      labels:
-        app: fastapi-demo
-    spec:
-      containers:
-      - name: fastapi-demo-container
-        image: ghcr.io/nmagee/fastapi-demo:{{ .Values.version.fastapiDemo }}
-        ports:
-        - containerPort: 80
-        resources:
-          requests:
-            memory: "524Mi"
-            cpu: "500m"
-          limits:
-            memory: "1024Mi"
-            cpu: "1000m"
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: fastapi-demo-deployment
+#   namespace: uvasds-services
+#   labels:
+#     app: fastapi-demo
+# spec:
+#   replicas: 2
+#   selector:
+#     matchLabels:
+#       app: fastapi-demo
+#   template:
+#     metadata:
+#       labels:
+#         app: fastapi-demo
+#     spec:
+#       containers:
+#       - name: fastapi-demo-container
+#         image: ghcr.io/nmagee/fastapi-demo:{{ .Values.version.fastapiDemo }}
+#         ports:
+#         - containerPort: 80
+#         resources:
+#           requests:
+#             memory: "524Mi"
+#             cpu: "500m"
+#           limits:
+#             memory: "1024Mi"
+#             cpu: "1000m"

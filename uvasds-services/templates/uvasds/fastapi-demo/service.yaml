@@ -1,12 +1,12 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: fastapi-demo-service
-  namespace: uvasds-services
-spec:
-  selector:
-    app: fastapi-demo
-  ports:
-    - protocol: TCP
-      port: 8080
-      targetPort: 80
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: fastapi-demo-service
+#   namespace: uvasds-services
+# spec:
+#   selector:
+#     app: fastapi-demo
+#   ports:
+#     - protocol: TCP
+#       port: 8080
+#       targetPort: 80
