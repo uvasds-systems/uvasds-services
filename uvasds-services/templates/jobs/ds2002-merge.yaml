@@ -4,14 +4,9 @@ metadata:
   name: ds2002-directory-merge
   namespace: uvasds-services
 spec:
-  schedule: "0-59/2 * * * *"
+  schedule: "0-59/10 * * * *"
   jobTemplate:
     spec:
-      metadata:
-        labels:
-          app: ds2002-merge-service
-          owner: nem2p
-          department: uvasds
       template:
         spec:
           containers:
