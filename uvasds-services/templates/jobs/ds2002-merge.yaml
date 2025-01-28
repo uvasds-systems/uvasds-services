@@ -11,7 +11,7 @@ spec:
         spec:
           containers:
           - name: ds2002-merge
-            image: ghcr.io/nmagee/ds2002-directory:v2
+            image: ghcr.io/nmagee/ds2002-directory:v3
             imagePullPolicy: Always
             envFrom:
             - secretRef:
