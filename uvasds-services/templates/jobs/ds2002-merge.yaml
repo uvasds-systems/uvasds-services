@@ -4,7 +4,7 @@ metadata:
   name: ds2002-directory-merge
   namespace: uvasds-services
 spec:
-  schedule: "0-59/10 * * * *"
+  schedule: "0 * * * *"
   jobTemplate:
     spec:
       template:
