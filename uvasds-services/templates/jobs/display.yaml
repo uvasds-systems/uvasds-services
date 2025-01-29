@@ -1,21 +1,21 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: ds2002-directory-merge
+  name: display-this
   namespace: uvasds-services
 spec:
-  schedule: "0 * * * *"
+  schedule: "0 7 * * *"
   jobTemplate:
     spec:
       template:
         spec:
           containers:
-          - name: ds2002-merge
-            image: ghcr.io/nmagee/ds2002-directory:v3
-            imagePullPolicy: Always
+          - name: display-this
+            image: ubuntu
             envFrom:
             - secretRef:
                 name: nem2p-pat
+            command: ["sleep",  "180"]
             resources:  
               limits:   
                 cpu: "0.5"
@@ -24,4 +24,4 @@ spec:
                 cpu: "0.5"
                 memory: 512Mi
           restartPolicy: Never
-      ttlSecondsAfterFinished: 10800
+      ttlSecondsAfterFinished: 86400
