@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: building-api-container
-        image: ghcr.io/nmagee/fastapi-demo:1.113
+        image: ghcr.io/uvads/building-api:1.2
         ports:
         - containerPort: 80
         resources:
