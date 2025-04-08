@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: private-nginx-deployment
+  namespace: uvasds-services
+  labels:
+    app: private-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: private-nginx
+  template:
+    metadata:
+      labels:
+        app: private-nginx
+    spec:
+      containers:
+      - name: private-reg-container
+        image: ghcr.io/nmagee/nginx-private
+        resources:
+          requests:
+            memory: "1024Mi"
+            cpu: "1000m"
+          limits:
+            memory: "2048Mi"
+            cpu: "2000m"
+      imagePullSecrets:
+      - name: regcred
