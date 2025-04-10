@@ -27,6 +27,9 @@ spec:
           limits:
             memory: "2048Mi"
             cpu: "2000m"
+        env:
+        - name: NAME
+          value: UVASDS
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
