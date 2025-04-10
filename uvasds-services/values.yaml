@@ -4,3 +4,4 @@ version:
   nem2p: '1.85'
   idGenerator: '1.28'
   buildingApi: '1.5'
+  streamlit: 'latest'

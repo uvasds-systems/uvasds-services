@@ -6,7 +6,7 @@ metadata:
   labels:
     app: id-generator
 spec:
-  replicas: 2
+  replicas: 10
   selector:
     matchLabels:
       app: id-generator
@@ -21,7 +21,7 @@ spec:
       containers:
       - name: id-generator-container
         image: ghcr.io/uvarc/id-generator:{{ .Values.version.idGenerator }}
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
         resources:
@@ -31,3 +31,5 @@ spec:
           limits:
             memory: "4096Mi"
             cpu: "2000m"
+      imagePullSecrets:
+      - name: nmagee-ghcr.io-auth
