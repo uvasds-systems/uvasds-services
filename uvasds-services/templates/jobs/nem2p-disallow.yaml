@@ -4,7 +4,7 @@ metadata:
   name: nem2p-job
   namespace: uvasds-services
 spec:
-  schedule: "0-59/5 * * * *"
+  schedule: "0-59/15 * * * *"
   jobTemplate:
     spec:
       template:
