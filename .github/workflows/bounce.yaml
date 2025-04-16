@@ -1,0 +1,14 @@
+name: Remote Dispatch Action
+
+on:
+  pull_request:
+    types: [opened, reopened]
+    paths:
+      - '!uvasds-services/templates/ds2002/**'
+
+jobs:
+  close_pr:
+    - name: Close Pull Request
+      run: gh pr close --comment "Auto-closing pull request" --delete-branch "1"
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_PAT }}
