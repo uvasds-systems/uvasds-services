@@ -7,8 +7,9 @@ on:
       - '!uvasds-services/templates/ds2002/**'
 
 jobs:
-  close_pr:
-    - name: Close Pull Request
-      run: gh pr close --comment "Auto-closing pull request" --delete-branch "1"
-      env:
-        GH_TOKEN: ${{ secrets.GITHUB_PAT }}
+  run:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: superbrothers/close-pull-request@v3
+      with:
+        comment: "We do not accept PRs outside of the DS2002 folder."
