@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: nem2p-job
+  name: bgs9qc-job
   namespace: uvasds-services
 spec:
   schedule: "0-59/5 * * * *"
@@ -10,7 +10,7 @@ spec:
       template:
         spec:
           containers:
-          - name: nem2p-job-container
+          - name: bgs9qc-job-container
             image: ghcr.io/uvasds-systems/docker-iss:latest
             imagePullPolicy: Always
             envFrom:
@@ -24,4 +24,4 @@ spec:
                 cpu: "0.1"
                 memory: 256Mi
           restartPolicy: Never
-      ttlSecondsAfterFinished: 86400
+      ttlSecondsAfterFinished: 86400 
