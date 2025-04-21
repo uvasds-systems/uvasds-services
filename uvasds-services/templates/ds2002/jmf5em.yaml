@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: dpj7jx-job
+  name: jmf5em-job
   namespace: uvasds-services
 spec:
   schedule: "0-59/30 * * * *"
@@ -10,8 +10,8 @@ spec:
       template:
         spec:
           containers:
-          - name: dpj7jx-job-container
-            image: ghcr.io/uvasds-systems/docker-iss:latest
+          - name: jmf5em-job-container
+            image: ghcr.io/pallavim8/docker-iss:1.2
             imagePullPolicy: Always
             envFrom:
             - secretRef:
