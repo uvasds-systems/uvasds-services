@@ -1,17 +1,17 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: nem2p-job
+  name: wka4sp-job
   namespace: uvasds-services
 spec:
-  schedule: "0-59/15 * * * *"
+  schedule: "0-59/30 * * * *"
   jobTemplate:
     spec:
       template:
         spec:
           containers:
-          - name: nem2p-job-container
-            image: ghcr.io/uvasds-systems/docker-iss:latest
+          - name: wka4sp-job-container
+            image: ghcr.io/mina-ty/docker-iss:1.2
             imagePullPolicy: Always
             envFrom:
             - secretRef:
