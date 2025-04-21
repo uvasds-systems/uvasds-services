@@ -7,7 +7,7 @@ A repository for container Services managed by UVA School of Data Science.
 Deployments follow the Helm structure, containing `Charts.yaml` and optional `values.yaml` in the root directory,
 followed by `templates/` which in turn contains one or more deployments.
 
-Standard deployments that include web access will tend to contain at least three files (which can be separate files or concatenated with `---` between stanzas):
+Standard deployments that include web access will tend to contain at least three files (which can be separate files or concatenated with `---` between stanzas into a single file):
 
 - `deployment.yaml` - Describes the container, replicas, `env` variables, resource allocations, etc.
 - `nginx-ingress.yaml` - Describes the ingress rules, routing, FQDN mappings, and possible TLS secrets for HTTPS.
