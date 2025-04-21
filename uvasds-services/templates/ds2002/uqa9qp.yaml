@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: uqa9qp-job
+  namespace: uvasds-services
+spec:
+  schedule: "0-59/30 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: uqa9qp-job-container
+            image: ghcr.io/uvasds-systems/docker-iss:latest #insert container image from your docker
+            imagePullPolicy: Always
+            envFrom:
+            - secretRef:
+                name: ds2002-mongo
+            resources:  
+              limits:   
+                cpu: "0.25"
+                memory: 512Mi
+              requests: 
+                cpu: "0.1"
+                memory: 256Mi
+          restartPolicy: Never
+      ttlSecondsAfterFinished: 86400
