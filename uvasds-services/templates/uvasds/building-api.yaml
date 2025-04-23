@@ -19,11 +19,11 @@ spec:
       - name: building-api-container
         image: ghcr.io/uvads/building-api:{{ .Values.version.buildingApi }}
         env:
-        - name: DBPASS
+        - name: MONGO_URI
           valueFrom:
             secretKeyRef:
-              name: dp1pass
-              key: DBPASS
+              name: rc-mongo-uri
+              key: MONGO_URI
         ports:
         - containerPort: 80
         resources:
