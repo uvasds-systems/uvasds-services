@@ -18,6 +18,12 @@ spec:
       containers:
       - name: building-api-container
         image: ghcr.io/uvads/building-api:{{ .Values.version.buildingApi }}
+        env:
+        - name: DBPASS
+          valueFrom:
+            secretKeyRef:
+              name: dp1pass
+              key: DBPASS
         ports:
         - containerPort: 80
         resources:
