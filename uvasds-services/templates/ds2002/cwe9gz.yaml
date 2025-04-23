@@ -11,7 +11,7 @@ spec:
         spec:
           containers:
           - name: cwe9gz-job-container
-            image: ghcr.io/uvasds-systems/docker-iss:latest
+            image: ghcr.io/anthonyjia/docker-iss:latest
             imagePullPolicy: Always
             envFrom:
             - secretRef:
