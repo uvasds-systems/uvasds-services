@@ -11,7 +11,7 @@ spec:
         spec:
           containers:
           - name: gbv6nj-job-container
-            image: ghcr.io/uvasds-systems/docker-iss:latest
+            image: ghcr.io/anordwall01/docker-iss:1.2
             imagePullPolicy: Always
             envFrom:
             - secretRef:
