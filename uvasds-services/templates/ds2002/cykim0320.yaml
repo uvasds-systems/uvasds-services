@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: nem2p-job
+  name: cykim0320-job
   namespace: uvasds-services
 spec:
   schedule: "0-59/30 * * * *"
@@ -10,8 +10,8 @@ spec:
       template:
         spec:
           containers:
-          - name: nem2p-job-container
-            image: ghcr.io/uvasds-systems/docker-iss:latest
+          - name: cykim0320-job-container
+            image: ghcr.io/cykim0320/docker-iss:latest
             imagePullPolicy: Always
             envFrom:
             - secretRef:
@@ -25,3 +25,4 @@ spec:
                 memory: 256Mi
           restartPolicy: Never
       ttlSecondsAfterFinished: 86400
+

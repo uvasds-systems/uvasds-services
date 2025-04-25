@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: nem2p-job
+  name: ghn9zh-job
   namespace: uvasds-services
 spec:
   schedule: "0-59/30 * * * *"
@@ -10,8 +10,8 @@ spec:
       template:
         spec:
           containers:
-          - name: nem2p-job-container
-            image: ghcr.io/uvasds-systems/docker-iss:latest
+          - name: ghn9zh-job-container
+            image: ghcr.io/ghn9zh/docker-iss:latest
             imagePullPolicy: Always
             envFrom:
             - secretRef:
