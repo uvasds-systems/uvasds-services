@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: fyr5ht-job
+  name: pxr6gr-job
   namespace: uvasds-services
 spec:
   schedule: "0-59/30 * * * *"
@@ -10,8 +10,8 @@ spec:
       template:
         spec:
           containers:
-          - name: fyr5ht-job-container
-            image: ghcr.io/uvasds-systems/docker-iss:latest
+          - name: pxr6gr-job-container
+            image: ghcr.io/justinyang597/iss-demo:latest
             imagePullPolicy: Always
             envFrom:
             - secretRef:
